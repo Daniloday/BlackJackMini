@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.missclick.blackjackmini.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_blankFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.missclick.blackjackmini.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.missclick.blackjackmini.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.missclick.blackjackmini.ui.start.StartFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_blankFragment_to_processFragment"
+            app:destination="@id/processFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/processFragment"
+        android:name="com.missclick.blackjackmini.ui.process.ProcessFragment"
+        android:label="fragment_process"
+        tools:layout="@layout/fragment_process" >
+        <action
+            android:id="@+id/action_processFragment_to_afterFirstFragment"
+            app:destination="@id/afterFirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/afterFirstFragment"
+        android:name="com.missclick.blackjackmini.ui.AfterFirst.AfterFirstFragment"
+        android:label="fragment_after_first"
+        tools:layout="@layout/fragment_after_first" >
+        <action
+            android:id="@+id/action_afterFirstFragment_to_processFragment"
+            app:destination="@id/processFragment" />
+        <action
+            android:id="@+id/action_afterFirstFragment_to_processSecondFragment"
+            app:destination="@id/processSecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/processSecondFragment"
+        android:name="com.missclick.blackjackmini.ui.processSecond.ProcessSecondFragment"
+        android:label="fragment_process_second"
+        tools:layout="@layout/fragment_process_second" >
+        <action
+            android:id="@+id/action_processSecondFragment_to_afterSecondFragment"
+            app:destination="@id/afterSecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/afterSecondFragment"
+        android:name="com.missclick.blackjackmini.ui.AfterSecond.AfterSecondFragment"
+        android:label="fragment_after_second2"
+        tools:layout="@layout/fragment_after_second" >
+        <action
+            android:id="@+id/action_afterSecondFragment_to_processFragment"
+            app:destination="@id/processFragment" />
+    </fragment>
+</navigation>
