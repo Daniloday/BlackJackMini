@@ -51,6 +51,9 @@ class ProcessSecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.textView4.setOnClickListener {
+            viewModel.go()
+        }
         binding.materialButton.setOnClickListener {
             findNavController().navigate(R.id.action_processSecondFragment_to_afterSecondFragment, AfterSecondFragment.newInstance(1, param1!!))
         }

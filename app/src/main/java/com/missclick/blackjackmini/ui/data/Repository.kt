@@ -2,27 +2,21 @@ package com.missclick.blackjackmini.ui.data
 
 import android.util.Log
 import com.missclick.blackjackmini.ui.data.local.ILocal
+import com.missclick.blackjackmini.ui.data.local.entities.GameEntity
 
 class Repository(private val local: ILocal) : IRepository {
-    override suspend fun getGame(nameOfCategory: String): List<String> =
-            localDataSource.getWords(nameOfCategory).map {
-                it.word
-            }
-    //return listOf("Peace","Door","Ball")
 
+    override suspend fun getGame(player : String){
+        val a = local.getGame("yes")
+    }
 
-    override suspend fun insertGame(wordModel: WordModel): Long {
-
-        val a =  localDataSource.addWord(
-                WordEntitity(
-                        word = wordModel.word,
-                        category = wordModel.category
+    override suspend fun insertGame(game : String) {
+        val a =  local.addGame(
+                GameEntity(
+                        1,"game"
                 )
         )
         Log.e("Repository", a.toString())
-        return a
     }
-
-
 
 }
